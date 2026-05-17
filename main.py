@@ -3,8 +3,11 @@ import random
 import asyncio
 from collections import deque
 import aiohttp
+import json
 
-TOKEN = "MTQ4NDA1ODc1OTUwMzU0NDQwMA.GmTgTl.ozKT2AlCXHZnnnZShMnBqy8jFvDacjPSUpGpjE"
+with open("config.json", "r", encoding="utf-8") as f:
+    config = json.load(f)
+TOKEN = config["token"]
 MESSAGES_FILE = "beef.txt"
 
 used_messages = set()
